@@ -280,7 +280,7 @@ $(function() {
       });
     }
     answer = encodeURIComponent(answer);
-    var url = 'http://v.t.sina.com.cn/share/share.php?appkey=1480881490k&title=' + answer;
+    var url = 'http://v.t.sina.com.cn/share/share.php?appkey=3781998732&title=' + answer;
     window.open(url);
   });
 });
