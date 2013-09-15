@@ -1,0 +1,104 @@
+
+/*******************************************************************************
+MeyerWeb Reset
+*******************************************************************************/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+/*******************************************************************************
+Kid Style
+*******************************************************************************/
+
+
+body,td,th {font-size: 12px; font-family: "Microsoft Yahei", arial, sans-serif;}
+a {color:#006699; text-decoration:none;}
+a:hover {color:#f60;text-decoration:underline;}
+dd,dl,ul,li,p,form{ margin:0; padding:0;list-style-type:none;}
+h1,h2,h3,h4,h5{font-size:14px;margin:0; padding:0; line-height:28px;}
+.but{cursor:pointer;width:113px;height:45px;}
+
+/*progress*/
+.progress{background-image: url(../images/top.png);}
+.checkbox {
+    background-image: url(../images/bg1.jpg);
+    margin:5px auto; 
+    width:760px;
+}
+.Test {
+    background-image: url(../images/bg1.jpg);
+    height:500px;
+}
+.progress,.evaluation{color:#666;height:auto;overflow:hidden;width:760px;margin:0;padding:0;}
+.evaluation div{float:left;}
+.progress i{color:#F60;font-weight:700; font-style:normal;}
+.progress p{height:26px;width:100%;}
+.progress .header{color:#fdea23;margin-top:25px;margin-left: 200px;width:50px;}
+.progress {height: 100px;}
+.progress .picbg{margin-left: 200px; background:#fff;height:15px;width:500px; border:1px solid red;}
+.progress .picbg span{background:#FF8320;display:block;float:left;height:15px; }
+/*content*/
+.Test .question {margin: 25px; font-size: 250%;text-align:center; color:#1086ff;}
+.Test input{text-align: center}
+.Test table {width: 760px;}
+.Test ul{ margin:0; padding:0;margin-left:200px;text-align:left;}
+.Test li{ cursor:pointer; width:100%; height:45px; line-height:45px; padding-left:5px;}
+.Test li.myBox{}
+.hidden{ display:none;}
+.container {float: left;}
+/*.result{padding:8px; line-height:25px;background:#FFF; border:1px dotted #FF8E20;}
+*/
+.choice{color:#8d4634;font-size:200%;}
+td.center{text-align: center}
+
+.center {text-align: center;}
+.but {
+    margin: 50px;
+}
+
+#award {width: 200px;}
+
+#result-text {
+    padding-right:50px;
+    vertical-align:middle;
+    width:370px;
+    text-align:left;
+    font-size:200%;
+    color:#681b11
+}
