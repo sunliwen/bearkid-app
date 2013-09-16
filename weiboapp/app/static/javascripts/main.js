@@ -26,7 +26,7 @@ $(function() {
     p = $("#result-text"),
     
     oPro = $(".picbg").find("span"),
-    oBtn1 = oP1.find(".but"),
+    oBtn1 = $("#p1But"),//oP1.find(".but"),
     oBtn2 = oP2.find(".but"),
     oBtn3 = oP3.find(".but"),
     oBtn4 = oP4.find(".but"),
@@ -280,7 +280,7 @@ $(function() {
       });
     }
     answer = encodeURIComponent(answer);
-    var url = 'http://v.t.sina.com.cn/share/share.php?appkey=1480881490k&title=' + answer;
+    var url = 'http://v.t.sina.com.cn/share/share.php?appkey=3781998732&title=' + answer;
     window.open(url);
   });
 });
