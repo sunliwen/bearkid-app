@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>未授权</title>
+
 <script src="http://tjs.sjs.sinajs.cn/t35/apps/opent/js/frames/client.js" language="JavaScript"></script>
 
 <script> 
@@ -11,5 +17,8 @@ function authLoad(){
         scope: "friendships_groups_read, friendships_groups_write" //可选，授权页scope参数
     });
 }
-authLoad();
 </script>
+</head>
+<body onload="authLoad()">
+</body>
+</html>
