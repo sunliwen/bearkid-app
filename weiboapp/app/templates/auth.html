@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +20,6 @@ function authLoad(){
 }
 </script>
 </head>
-<body onload="authLoad()">
+<body onload="authLoad()" style="background-image:url({% static 'images/index.jpg' %}); width:760px; height:600px">
 </body>
 </html>

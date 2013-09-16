@@ -1,9 +1,9 @@
 {% load staticfiles %}
-
 <!DOCTYPE html>
 <html xmins:wb="http://open.weibo.com/wb">
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+        <meta http-equiv="x-ua-compatible" content="IE=edge" >
 	<title>熊孩子指数大测试</title>
 
   	<link href="{% static 'stylesheets/animate+animo.css' %}" rel="stylesheet" type="text/css">
@@ -11,6 +11,10 @@
 
 	<!--[if lt IE 9]>
 	<script src="{% static 'javascripts/html5shiv.js' %}"></script>
+	<![endif]-->
+
+	<!--[if lt IE 10]>
+	<script src="{% static 'javascripts/selectivizr-min.js' %}"></script>
 	<![endif]-->
 
 	<script src="{% static 'javascripts/jquery-1.10.2.min.js' %}" type="text/javascript"></script>
@@ -59,7 +63,7 @@
 			  		</tbody>
 			      </table>
 				</form>
-				<input id="p1But" onclick="alert('test')" type="image" src="{% static 'images/but.png' %}" class="but"/>
+				<input id="p1But" type="image" src="{% static 'images/but.png' %}" class="but"/>
 		    </div>
 		    <div id="Problem2" class="hidden center" >
 		        <h3 class="question">2. 星座</h3>
@@ -196,8 +200,8 @@
 				</div>
 			</div>
 			<div style="width:550px;position: absolute;left: 180px;height:200px">
-				<h3 id="result-h3" class="question" style="text-align:left">战斗力指数：<img id="fightIndex" src="{% static 'images/s1.png' %}"/></h3>
-				<div id="result-text">test test test test</div>
+				<h3 id="result-h3" class="question" style="text-align:left">战斗力指数：<img id="fight-index" src="{% static 'images/s1.png' %}"/></h3>
+				<div id="result-text"></div>
 			</div>
 
 			<div style="width:750px; position: absolute;left: 30px;height:50px;top:460px">

@@ -38,6 +38,8 @@ $(function() {
     oBtnShare = $("#shareBut"),
     oBtnFollow = oR.find("#follow"),
 
+    fightIndex = $("#fight-index"),
+
     index = 0,
     answer,
     data = [];
@@ -59,10 +61,9 @@ $(function() {
   });
 
   $(document).on('click', '#Problem1 input.but', function() {
-    alert("test1");
     var choose1 = oP1.find("input[type='radio']:checked").length;
-    alert(choose1);
     if (choose1) {
+      try {
       oP1.animo({
         animation: 'flipOutY'
       }, function() {
@@ -72,6 +73,10 @@ $(function() {
           animation: 'flipInY'
         });
       });
+      } finally {
+        oP1.hide();
+        oP2.show();
+      };
     } else {
       alert("请选择一个答案");
       return false;
@@ -90,6 +95,7 @@ $(function() {
   oBtn2.click(function() {
     var choose2 = oP2.find("input[type='radio']:checked").length;
     if (choose2) {
+      try {
       oP2.animo({
         animation: 'flipOutY'
       }, function() {
@@ -99,6 +105,10 @@ $(function() {
           animation: 'flipInY'
         });
       });
+      } finally {       
+          oP2.hide();
+          oP3.show();
+      };
     } else {
       alert("请选择一个答案");
       return false;
@@ -117,7 +127,8 @@ $(function() {
   oBtn3.click(function() {
     var choose3 = oP3.find("input[type='radio']:checked").length;
     if (choose3) {
-      oP3.animo({
+      try{
+          oP3.animo({
         animation: 'flipOutY'
       }, function() {
         oP3.hide();
@@ -126,6 +137,11 @@ $(function() {
           animation: 'flipInY'
         });
       });
+
+       }finally{
+           oP3.hide();
+           oP4.show();
+       }
     } else {
       alert("请选择一个答案");
       return false;
@@ -145,6 +161,7 @@ $(function() {
   oBtn4.click(function() {
     var choose4 = oP4.find("input[type='radio']:checked").length;
     if (choose4) {
+        try{
       oP4.animo({
         animation: 'flipOutY'
       }, function() {
@@ -154,6 +171,10 @@ $(function() {
           animation: 'flipInY'
         });
       });
+        } finally {
+            oP4.hide();
+            oP5.show();
+        }
     } else {
       alert("请选择一个答案");
       return false;
@@ -171,6 +192,7 @@ $(function() {
   oBtn5.click(function() {
     var choose5 = oP5.find("input[type='radio']:checked").length;
     if (choose5) {
+        try{
       oP5.animo({
         animation: 'flipOutY'
       }, function() {
@@ -180,10 +202,15 @@ $(function() {
           animation: 'flipInY'
         });
       });
+        } finally {
+            oP5.hide();
+            oP6.show();
+        }
     } else {
       alert("请选择一个答案");
       return false;
     }
+
   });
   oP6.find("input[type='radio']").change(function() {
     var choose6 = oP6.find("input[type='radio']:checked").length;
@@ -197,6 +224,7 @@ $(function() {
   oBtn6.click(function() {
     var choose6 = oP6.find("input[type='radio']:checked").length;
     if (choose6) {
+        try{
       oP6.animo({
         animation: 'flipOutY'
       }, function() {
@@ -206,6 +234,11 @@ $(function() {
           animation: 'flipInY'
         });
       });
+
+        }finally {
+        oP6.hide();
+        oP7.show();
+        }
     } else {
       alert("请选择一个答案");
       return false;
@@ -223,6 +256,7 @@ $(function() {
   oBtn7.click(function() {
     var choose7 = oP7.find("input[type='radio']:checked").length;
     if (choose7) {
+        try{
       oP7.animo({
         animation: 'flipOutY'
       }, function() {
@@ -232,14 +266,19 @@ $(function() {
           animation: 'flipInY'
         });
       });
+        } finally {
+            oP7.hide();
+            oR.show();
+        }
       if (!data[1]) {
         data[1] = 3;
       }
       index = data[0] + data[1];
       answer = result[index];
       if (data[0] === 'f') {
-        $('#Result').find('#award').attr("src", 'images/tuz.png');
+        $('#Result').find('#award').attr("src", 'static/images/tuz.png');
       }
+      $('#fight-index').attr("src", "static/images/s" + data[1] + ".png");
       result_text.html(result[index]);
     } else {
       alert("请选择一个答案");
@@ -249,6 +288,7 @@ $(function() {
   oBtn9.click(function() {
     data.length = 0;
     $('input:radio').removeAttr('checked');
+    try {
     oR.animo({
       animation: 'flipOutY'
     }, function() {
@@ -264,6 +304,21 @@ $(function() {
       oP6.hide();
       oP7.hide();
     });
+    
+    }
+    finally {
+        oR.hide();
+        oP1.show();
+        oP1.animo({
+            animation: 'flipInY'
+        });
+        oP2.hide();
+        oP3.hide();
+        oP4.hide();
+        oP5.hide();
+        oP6.hide();
+        oP7.hide();
+    }
     oPro.animate({
       "width": "0%"
     }, 400);
