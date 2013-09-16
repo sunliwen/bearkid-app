@@ -95,10 +95,30 @@ td.center{text-align: center}
 #award {width: 200px;}
 
 #result-text {
-    padding-right:50px;
-    vertical-align:middle;
-    width:370px;
+    background-image:url('http://kid.pocoweb.com/static/images/bg2.png');
+    background-repeat:no-repeat;
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    padding: 50px;
+    height: 250px;
+    overflow: auto;
+    width: 450px;
+    margin: auto;
     text-align:left;
-    font-size:200%;
-    color:#681b11
+    font-size: 150%;
+}
+
+#result-h3 {
+   padding-left: 50px;
+   width: 400px;
+   vertical-align: top;
+}
+
+
+#weibo-label {
+   display: block;
+   position: relative;
+   font-size: 120%;
+   margin-top: 10px;
 }

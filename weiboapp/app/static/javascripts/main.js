@@ -23,7 +23,7 @@ $(function() {
     oP7 = $("#Problem7"),
 
     oR = $("#Result"),
-    p = $("#result-text"),
+    result_text = $("#result-text"),
     
     oPro = $(".picbg").find("span"),
     oBtn1 = $("#p1But"),//oP1.find(".but"),
@@ -35,7 +35,7 @@ $(function() {
     oBtn7 = oP7.find(".but"),
 
     oBtn9 = oR.find("#retake"),
-    oBtnShare = oR.find(".share"),
+    oBtnShare = $("#shareBut"),
     oBtnFollow = oR.find("#follow"),
 
     index = 0,
@@ -57,8 +57,11 @@ $(function() {
     data.push($(this).val());
     return data;
   });
-  oBtn1.click(function() {
+
+  $(document).on('click', '#Problem1 input.but', function() {
+    alert("test1");
     var choose1 = oP1.find("input[type='radio']:checked").length;
+    alert(choose1);
     if (choose1) {
       oP1.animo({
         animation: 'flipOutY'
@@ -237,7 +240,7 @@ $(function() {
       if (data[0] === 'f') {
         $('#Result').find('#award').attr("src", 'images/tuz.png');
       }
-      p.html(result[index]);
+      result_text.html(result[index]);
     } else {
       alert("请选择一个答案");
       return false;
