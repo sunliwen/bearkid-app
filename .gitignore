@@ -40,4 +40,4 @@ nosetests.xml
 
 
 weibo_settings.py
-static/
+^static/
