@@ -92,7 +92,9 @@ class WeiboView(View, JSONResponseMixin):
 
         client = _create_client()
         signed_request = request.POST['signed_request']
-        follow = request.POST['signed_request'][0] == 'true'
+        follow = request.POST['follow'][0] == u't'
+        #print type(follow)
+        #print follow
         data = client.parse_signed_request(signed_request)
 
         user_id = data.get('uid', '')
@@ -106,12 +108,13 @@ class WeiboView(View, JSONResponseMixin):
 
         # TODO, switch to update_url_text api later
         pic_path = os.path.normpath(os.path.join(os.path.dirname(__file__), 'static/images/index_small.jpg'))
-        print pic_path
+        #print pic_path
         f = open(pic_path, 'rb')
         r = client.statuses.upload.post(status=request.POST['text'], pic=f)
         f.close()
 
         if follow:
+            print "try to follow"
             try:
                 r = client.friendships.create.post(uid=WEIBO_ID)
             except:

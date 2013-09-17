@@ -360,14 +360,15 @@ $(function() {
       {
         'signed_request': signed_request,
         'text': $("#result-text").text(),
-        'follow': $('#Result').find('#follow').is(':checked')
+        'follow': $('#follow-checkbox').is(':checked')
       },
       function(result) {
         if (result.error === 'success') {
           alert("分享成功");
           // redirect to event page
         }
-      });
+      }
+    );
   });
 
 });
