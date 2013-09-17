@@ -92,7 +92,7 @@ class WeiboView(View, JSONResponseMixin):
 
         client = _create_client()
         signed_request = request.POST['signed_request']
-        follow = request.POST['signed_request']
+        follow = request.POST['signed_request'][0] == 'true'
         data = client.parse_signed_request(signed_request)
 
         user_id = data.get('uid', '')
