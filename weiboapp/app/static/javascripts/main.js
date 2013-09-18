@@ -292,7 +292,7 @@ $(function() {
             default_text:$("#result-text").text(),
             refer:"y",
             default_image:"http%3A%2F%2Fkid.pocoweb.com%2Fstatic%2Fimages%2Findex_small.jpg",
-            appkey:"3G9hzZ",
+            //appkey:"3G9hzZ",
             id: "publish-button"
           });
       });
