@@ -270,17 +270,45 @@ $(function() {
             oP7.hide();
             oR.show();
         }
+
       if (!data[1]) {
         data[1] = 3;
       }
       index = data[0] + data[1];
       answer = result[index];
+
       if (data[0] === 'f') {
         $('#Result').find('#award').attr("src", 'static/images/tuz.png');
         $('#product-link').attr("href", 'http://api.weibo.com/t_short_url?outUrl=http%3A%2F%2Fto.taobao.com%2FPOINT%3Fbackurl%3Dhttp%3A%2F%2Fdetail.tmall.com%2Fitem.htm%3Fid%3D20133693601%26amp%3Bspm%3Da310v.4.88.1&extra=20133693601|product|product')
       }
       $('#fight-index').attr("src", "static/images/s" + data[1] + ".png");
       result_text.html(result[index]);
+
+      // WB2.anyWhere(function(W){
+      //     W.widget.publish({
+      //       action:"pubilish",
+      //       type:"web",
+      //       language:"zh_cn",
+      //       default_text:$("#result-text").text(),
+      //       tag:"熊孩子",
+      //       refer:"y",
+      //       default_image:"http%3A%2F%2Fkid.pocoweb.com%2Fstatic%2Fimages%2Findex_small.jpg",
+      //       appkey:"3G9hzZ",
+      //       id: "publish-button"
+      //     });
+      // });
+
+      WB2.anyWhere(function(W){
+          W.widget.publish({
+              toolbar:"",
+              button_type:"red",
+              button_size:"big",
+              default_text:"#熊孩子#",
+              default_image:"http://kid.pocoweb.com/static/images/index_small.jpg",
+              id: "publish-button"
+          });
+      });
+
     } else {
       alert("请选择一个答案");
       return false;
@@ -343,32 +371,22 @@ $(function() {
   */
 
 
-  // WB2.anyWhere(function(W){
-  //     W.widget.publish({
-  //       'id' : 'share-button',
-  //       'button_size' : 'big',
-  //       'default_text' : 'test',
-  //       'default_image' : 'http://kid.pocoweb.com/static/images/xx.png',
-  //       'toolbar' : []
-  //     });
+  // $(document).on('click', '#share-button', function() {
+  //   //alert($("#result-text").text());
+  //   //alert(signed_request);
+  //   $.post('/weibo',
+  //     {
+  //       'signed_request': signed_request,
+  //       'text': $("#result-text").text(),
+  //       'follow': $('#follow-checkbox').is(':checked')
+  //     },
+  //     function(result) {
+  //       if (result.error === 'success') {
+  //         alert("分享成功");
+  //         // redirect to event page
+  //       }
+  //     }
+  //   );
   // });
-
-  $(document).on('click', '#share-button', function() {
-    //alert($("#result-text").text());
-    //alert(signed_request);
-    $.post('/weibo',
-      {
-        'signed_request': signed_request,
-        'text': $("#result-text").text(),
-        'follow': $('#follow-checkbox').is(':checked')
-      },
-      function(result) {
-        if (result.error === 'success') {
-          alert("分享成功");
-          // redirect to event page
-        }
-      }
-    );
-  });
 
 });
