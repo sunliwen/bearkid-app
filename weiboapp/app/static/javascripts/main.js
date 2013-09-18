@@ -284,31 +284,18 @@ $(function() {
       $('#fight-index').attr("src", "static/images/s" + data[1] + ".png");
       result_text.html(result[index]);
 
-      // WB2.anyWhere(function(W){
-      //     W.widget.publish({
-      //       action:"pubilish",
-      //       type:"web",
-      //       language:"zh_cn",
-      //       default_text:$("#result-text").text(),
-      //       tag:"熊孩子",
-      //       refer:"y",
-      //       default_image:"http%3A%2F%2Fkid.pocoweb.com%2Fstatic%2Fimages%2Findex_small.jpg",
-      //       appkey:"3G9hzZ",
-      //       id: "publish-button"
-      //     });
-      // });
-
       WB2.anyWhere(function(W){
           W.widget.publish({
-              toolbar:"",
-              button_type:"red",
-              button_size:"big",
-              default_text:"#熊孩子#",
-              default_image:"http://kid.pocoweb.com/static/images/index_small.jpg",
-              id: "publish-button"
+            action:"pubilish",
+            type:"web",
+            language:"zh_cn",
+            default_text:$("#result-text").text(),
+            refer:"y",
+            default_image:"http%3A%2F%2Fkid.pocoweb.com%2Fstatic%2Fimages%2Findex_small.jpg",
+            appkey:"3G9hzZ",
+            id: "publish-button"
           });
       });
-
     } else {
       alert("请选择一个答案");
       return false;
