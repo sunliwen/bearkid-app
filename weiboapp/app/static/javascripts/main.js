@@ -356,23 +356,23 @@ $(function() {
   });
   */
 
-
-  // $(document).on('click', '#share-button', function() {
-  //   //alert($("#result-text").text());
-  //   //alert(signed_request);
-  //   $.post('/weibo',
-  //     {
-  //       'signed_request': signed_request,
-  //       'text': $("#result-text").text(),
-  //       'follow': $('#follow-checkbox').is(':checked')
-  //     },
-  //     function(result) {
-  //       if (result.error === 'success') {
-  //         alert("分享成功");
-  //         // redirect to event page
-  //       }
-  //     }
-  //   );
-  // });
+  $("#follow-checkbox").on('click', function() {
+    var checked = $(this).is(':checked');
+    if (checked) {
+      $.post('/weibo',
+        {
+          'signed_request': signed_request,
+          //'text': $("#result-text").text(),
+          'follow': $('#follow-checkbox').is(':checked')
+        },
+        function(result) {
+          if (result.error === 'success') {
+            //alert("分享成功");
+            // redirect to event page
+          }
+        }
+      );
+    }
+  });
 
 });

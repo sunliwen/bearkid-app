@@ -93,6 +93,7 @@ class WeiboView(View, JSONResponseMixin):
         client = _create_client()
         signed_request = request.POST['signed_request']
         follow = request.POST['follow'][0] == u't'
+
         #print type(follow)
         #print follow
         data = client.parse_signed_request(signed_request)
@@ -107,23 +108,21 @@ class WeiboView(View, JSONResponseMixin):
         client.set_access_token(auth_token, expires)
 
         # TODO, switch to update_url_text api later
-        pic_path = os.path.normpath(os.path.join(os.path.dirname(__file__), 'static/images/index_small.jpg'))
+        #pic_path = os.path.normpath(os.path.join(os.path.dirname(__file__), 'static/images/index_small.jpg'))
         #print pic_path
-        f = open(pic_path, 'rb')
-        r = client.statuses.upload.post(status=request.POST['text'], pic=f)
-        f.close()
+        #f = open(pic_path, 'rb')
+        #r = client.statuses.upload.post(status=request.POST['text'], pic=f)
+        #f.close()
 
         if follow:
             print "try to follow"
             try:
                 r = client.friendships.create.post(uid=WEIBO_ID)
+                if 'error' in r:
+                    return JSONResponseMixin.render_to_response(self, r)
+                return JSONResponseMixin.render_to_response(self, dict(error='success'))
             except:
-                pass
-
-        print r
-        if 'error' in r:
-            return JSONResponseMixin.render_to_response(self, r)
-        return JSONResponseMixin.render_to_response(self, dict(error='success'))
+                return JSONResponseMixin.render_to_response(self, dict(error='fail'))
 
 
 def _create_client(oauth_token=None, expires=None):
